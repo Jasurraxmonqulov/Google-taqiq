@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Search site</title>
+    <script async src="https://cse.google.com/cse.js?cx=52e5690860f7d456f"></script>
+    <script>
+        function search() {
+            var input = document.querySelector('.sch').value;
+            if (input) {
+                // "ggg.com" so'zini tekshirish
+                if (input.toLowerCase() === "global tahlil.com") {
+                    window.location.href = "ogohlantirish.html"; // Sahifaga yo'naltirish
+                } else {
+                    var element = google.search.cse.element.getElement('searchresults-only0');
+                    if (element) {
+                        element.execute(input);
+                    }
+                    document.querySelector('.searchbar').style.display = 'none';
+                    document.querySelector('.resultbar').style.display = 'block';
+                }
+            }
+        }
+
+        function goBack() {
+            document.querySelector('.searchbar').style.display = 'block';
+            document.querySelector('.resultbar').style.display = 'none';
+        }
+    </script>
+    <style>
+        .resultbar {
+            display: none;
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="searchbar">
+        <div class="search1">
+            <input type="search" style="width: 900px; height: 42px;" class="sch">
+            <button type="submit" onclick="search()" style="background-color: rgba(148, 84, 38, 0); border: none;">
+                <img src="/sayt/img/954591.png" alt="" width="26px" height="26px" style="cursor: pointer;">
+            </button>
+        </div>
+        <div class="tibe">
+            <div class="ramka">
+                <iframe src="https://en.wikipedia.org/wiki/Main_Page" width="100%" height="100%" class="wiki"></iframe>
+            </div>
+            <div class="ramka">
+                <iframe src="https://drive.google.com/start/apps" frameborder="0" class="wiki" width="400px" height="400px"></iframe>
+            </div>
+            <div class="ramka">
+                <iframe src="https://workspace.google.com/" frameborder="0" class="wiki" width="400px" height="400px"></iframe>
+            </div>
+            <div class="ramka">
+                <iframe src="https://deepai.org/chat/free-chatgpt" frameborder="0" class="wiki" width="400px" height="400px"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <div class="resultbar">
+        <button class="close-btn" onclick="goBack()">✖</button>
+        <gcse:searchresults-only></gcse:searchresults-only>
+    </div>
+</body>
+</html>

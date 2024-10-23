@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qidiruv natijalari</title>
+</head>
+<body>
+    <div id="results"></div>
+
+    <script>
+        function getQueryParameter(name) {
+            name = name.replace(/[[]/, '\[').replace(/[]]/, '\]');
+            var regex = new RegExp('[\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/+/g, ' '));
+        }
+
+        window.onload = function() {
+            var query = getQueryParameter('q');
+            if (query) {
+                var googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+                window.location.href = googleSearchUrl;
+            }
+        };
+    </script>
+</body>
+</html>

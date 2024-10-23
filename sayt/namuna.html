@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qidiruv</title>
+    <style>
+        .gcse-searchbox-only, .gsc-control-searchbox-only {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="search" id="search-box" placeholder="Qidiruv...">
+    <button onclick="executeSearch()">Qidirish</button>
+
+    <script async src="https://cse.google.com/cse.js?cx=52e5690860f7d456f"></script>
+    <div class="gcse-searchresults-only"></div>
+
+    <script>
+        function executeSearch() {
+            var query = document.getElementById('search-box').value;
+            if (query) {
+                var element = google.search.cse.element.getElement('searchresults-only');
+                if (element) {
+                    element.execute(query);
+                }
+            }
+        }
+
+        window.onload = function() {
+            google.search.cse.element.render({
+                div: "searchresults-only",
+                tag: 'searchresults-only'
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+.searchbar{
+    margin-left: 450px;
+    margin-top: 220px;
+    width: 1000px;
+    background-color: rgba(4, 68, 105, 0.58);
+    height: 500px;
+    padding-top: 20px;
+    border-radius: 28px;
+    box-shadow: 0 0 15px;
+}
+body{
+    background-image: url(/sayt/img/pexels-eberhardgross-443446.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.search1{
+    margin-left: 19px;
+    width: 960px;
+    height: 90px;
+    margin-top: 20px;
+    border-radius: 35px;
+    /* box-shadow: 0 0 25px black, 0 0 25px black; */
+    display: flex;
+}
+.sch{
+    border-radius: 20px;
+    font-size: 28px;
+    margin-top: 25px;
+    margin-left: 14px;
+    padding-left: 15px;
+    background-color: #aeb6c5b6;
+    color: rgb(210, 214, 214);
+    border: 2px solid rgb(37, 38, 85);
+    outline: none;
+}
+.tibe{
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    margin-top: 70px;
+    margin-left: 46px;
+}
+.ramka{
+    width: 170px;
+    height: 230px;
+    box-shadow: 0 0 25px black, 0 0 25px black;
+    border-radius: 25px;
+    transition: transform 0.54s ease;
+    position: relative;
+    overflow: hidden;
+}
+.ramka:hover{
+    box-shadow: 0 0 10px white, 0 0 10px white;
+    cursor: pointer;
+    transform: scale(4.3, 3);
+    z-index: 9;
+    border-radius: 10px;
+}
+.search1:hover{
+}
+.wiki{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 1500px;
+    transform: scale(0.17);
+    transform-origin: 0 0;
+    border: none;
+    background-color: white;
+}
